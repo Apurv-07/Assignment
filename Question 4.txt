@@ -1,0 +1,34 @@
+Question 4
+Let’s see we an api url https://my-json-server.typicode.com/typicode/demo/posts
+Write a sample code to call this rest api and display the result.
+
+
+Answer:
+
+import React from 'react';
+import Axios from 'axios';
+var response;
+function App(){
+ var [a,b]=React.useState([]);
+ React.useEffect(()=>{
+   Axios.get('https://my-json-server.typicode.com/typicode/demo/posts')
+   .then((response)=>{
+     console.log(response)
+     b(a=response.data)
+   })
+ },[])
+ return(
+    <>
+    <h1>Hello</h1>
+    {
+      a.map((item)=>{
+        console.log(a)
+        return(
+          <h2>The item id is {item.id} and title is {item.title}</h2>
+        )
+      })
+    }
+    </>
+  )
+}
+export default App;
