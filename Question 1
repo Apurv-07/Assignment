@@ -1,0 +1,20 @@
+Question 1
+Define an array of numbers (use any random numbers). Write a program to print only the even numbers of the array. Do not use any library functions, need to do via for loops only
+
+
+Answer:-
+import React from 'react';
+function App(){
+  var a=[2,9,72,22,96,32,8];
+  var b=[];
+  for(var i=0;i<a.length;i++){
+      if(a[i]%2==0)
+      b.push(<li>{a[i]}</li>);
+  }
+  return (
+      <div> 
+      {b}
+      </div>
+  );
+}
+export default App;
