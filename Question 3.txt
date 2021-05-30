@@ -1,0 +1,27 @@
+Question 3
+Suppose you have an array of 101 integers. This array is already sorted and all numbers in this array are consecutive. Each number only occurs once in the array except one number which occurs twice. Write a js code to find the repeated number.
+e.g $arr = array(0,1,2,3,4,5,6,7,7,8,9,10...................);
+
+ANSWER:-
+import React from 'react';
+function App(){
+  var a=[0,1,2,3,4,5,6,7,7,8,9,10...................] //I didn't write all the elements because of space
+  var b=[];
+  for(var i=0;i<=a.length-1;i++){
+    for (var j=i+1;j<=a.length-1;j++){
+      if(a[i]==a[j]){
+        b.push(a[i])
+      }
+    }
+  }
+  console.log(b)
+  return(
+    <>
+    {
+      b.map((item)=>
+      <h2>{item}</h2>)
+    }
+    </>
+  )
+}
+export default App;
