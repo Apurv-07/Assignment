@@ -1,0 +1,49 @@
+Question 2
+Find the maximum consecutive 1's in an array of 0's and 1's.
+Example:
+a) 00110001001110 - Output :3 [Max num of consecutive 1's is 3]
+b) 1000010001 - Output :1 [Max num of consecutive 1's is 1]
+
+ANSWER:-
+
+import React from 'react';
+function App(){
+  var a='10000111110000000011';
+  var z=1;
+  var o=0;
+  var zeroCount=[];
+  var oneCount=[];
+  //var b='10000100000011';
+  for(var i=0;i<=a.length;i++){
+    if(a[i]==a[i+1]){
+      if(a[i]==0){
+        z=z+1;
+      }  
+    zeroCount.push(z)
+    }
+    else{
+      z=1
+    }
+  }
+  for(var i=0;i<=a.length;i++){
+    if(a[i]==a[i+1]){
+      if(a[i]==1){
+        o=o+1;
+      }  
+    oneCount.push(o)
+    }
+    else{
+      o=1
+    }
+  }
+  var largest0 = Math.max.apply(0, zeroCount);
+  var largest1 = Math.max.apply(0, oneCount);
+  return(
+    <>
+    <h1>The maximum count of Zero is {largest0}</h1>
+    <h1>The maximum count of One is {largest1}</h1>
+    </>
+  )
+}
+export default App;
+
