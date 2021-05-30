@@ -1,0 +1,41 @@
+Question
+Make a simple todo app with reactJS, just need two features in the app 
+To add a todo
+To display all todo
+
+ANSWER:-
+//You can check the working model from here :- https://039tw.csb.app/
+
+import "./styles.css";
+import React from "react";
+export default function App() {
+  var [a, b] = React.useState();
+  var [c, d] = React.useState([]);
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <input
+        type="text"
+        placeholder="TODO ITEM"
+        onChange={function () {
+          b((a = event.target.value));
+          return a;
+        }}
+      />
+      <button
+        onClick={function () {
+          d((c) => [...c, a]);
+        }}
+      >
+        Click
+      </button>
+      {c.length > 0 ? <h2>The Added items are</h2> : null}
+      <ul>
+        {c.map((item, index) => {
+          return <li key={index}>{item}</li>;
+        })}
+      </ul>
+    </div>
+  );
+}
